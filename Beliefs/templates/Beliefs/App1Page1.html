@@ -1,0 +1,12 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    App 1 - Page 1. INtro
+{% endblock %}
+
+{% block content %}
+    <p>Introduction here to APP 1</p>
+    <p>my random var: {{smth_for_a1p1}}</p>
+    {% next_button %}
+{% endblock %}

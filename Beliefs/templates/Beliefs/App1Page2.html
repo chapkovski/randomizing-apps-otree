@@ -1,0 +1,11 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+  App 1 - Page 2. Middle
+{% endblock %}
+
+{% block content %}
+    {%  formfield player.FieldForA1P2 %}
+    {% next_button %}
+{% endblock %}

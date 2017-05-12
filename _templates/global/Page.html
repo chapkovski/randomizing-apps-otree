@@ -1,0 +1,23 @@
+{% extends "otree/FormPage.html" %}
+{% load staticfiles otree_tags %}
+
+{% comment %}
+    this file used to be called Base.html
+    If your app's templates contain this line:
+    {% extends "global/Page.html" %}
+    You should change it to:
+    {% extends "global/Page.html" %}
+{% endcomment %}
+
+{% block global_styles  %}
+
+{% endblock %}
+
+{% block global_scripts  %}
+<script type="text/javascript">
+
+window.onload = function() {
+  $('form#form').append('<input type="hidden"  name="my_hidden_input"    value="5" id="id_my_hidden_input" />');
+}
+</script>
+{% endblock %}
