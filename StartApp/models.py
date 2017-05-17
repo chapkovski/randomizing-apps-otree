@@ -10,7 +10,7 @@ from otree.models_concrete import ParticipantToPlayerLookup, RoomToSession
 author = 'Philipp Chapkovski, University of Zurich'
 
 doc = """
-intro
+Randomizing app sequence
 """
 
 
@@ -18,8 +18,7 @@ class Constants(BaseConstants):
     name_in_url = 'intro'
     players_per_group = None
     num_rounds = 1
-    # 'apps' are just set of pages.
-    # 'fields' is a dictionary that associates each page with a set of fields
+
 
 class Subsession(BaseSubsession):
     ...

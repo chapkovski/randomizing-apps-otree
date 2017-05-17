@@ -15,7 +15,6 @@ import otree.common_internal
 from django.core.urlresolvers import reverse
 
 
-
 def get_new_sequence_of_apps(app_sequence):
     the_rest = app_sequence[1:]
     random.shuffle(the_rest)
@@ -23,21 +22,18 @@ def get_new_sequence_of_apps(app_sequence):
     return app_sequence
 
 
-def get_players(self, app_sequence):
-    """Used to calculate payoffs"""
-    # app_sequence = get_new_sequence_of_apps(self.session.config['app_sequence'])
+def get_players(participant, app_sequence):
     lst = []
     print('NEW APP SEQ:::', app_sequence)
     for app in app_sequence:
         models_module = otree.common_internal.get_models_module(app)
         players = models_module.Player.objects.filter(
-            participant=self
+            participant=participant
         ).order_by('round_number')
         lst.extend(list(players))
     return lst
 
 def build_participant_to_player_lookups(participant, subsession_app_names):
-        # subsession_app_names = self.config['app_sequence']
         views_modules = {}
         for app_name in subsession_app_names:
             views_modules[app_name] = (
