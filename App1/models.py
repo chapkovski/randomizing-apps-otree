@@ -30,5 +30,5 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    # this is the field where the order of pages subsets (aka apps) is stored
+
     decision = models.IntegerField()

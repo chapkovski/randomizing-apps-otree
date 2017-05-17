@@ -66,7 +66,7 @@ class Letsgetstarted(Page):
         print('OLD APP SEQ', self.participant.session.config['app_sequence'])
         if not self.player.sequence_of_apps:
             print('SETTING A NEW RANDOM SEQUENCE...')
-            p2p = ParticipantToPlayerLookup.objects.filter(participant=self.participant).delete()
+            ParticipantToPlayerLookup.objects.filter(participant=self.participant).delete()
             self.player.sequence_of_apps = get_new_sequence_of_apps(self.session.config['app_sequence'])
             build_participant_to_player_lookups(self.participant, self.player.sequence_of_apps)
         return True
