@@ -1,1 +1,1 @@
-# Shuffling subset of pages
+# Shuffling several apps

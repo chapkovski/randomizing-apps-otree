@@ -148,10 +148,12 @@ SESSION_CONFIG_DEFAULTS = {
 
 SESSION_CONFIGS = [
 
-    {   'name': 'Beliefs',
-        'display_name': "Beliefs everything randomized",
+    {   'name': 'shufller',
+        'display_name': "Shuffling apps",
         'num_demo_participants': 1,
-        'app_sequence': ['Beliefs'],
+        'app_sequence': ['StartApp', 'App1',
+                         'App2', 'App3',
+                         ],
         'use_browser_bots': False,
     }
 ]

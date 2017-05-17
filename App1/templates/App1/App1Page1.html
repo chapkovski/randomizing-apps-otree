@@ -2,10 +2,11 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-  App 3 - Page 3. Final
+    App 1 - Page 1. ROUND {{subsession.round_number}}
 {% endblock %}
 
 {% block content %}
-  {%  formfield player.FieldForA3P3 %}
-  {% next_button %}
+    <p>Introduction here to APP 1</p>
+   {{form}}
+    {% next_button %}
 {% endblock %}
