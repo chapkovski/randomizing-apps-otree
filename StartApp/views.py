@@ -54,6 +54,8 @@ def build_participant_to_player_lookups(participant, subsession_app_names):
                         page_index=page_index,
                         app_name=player._meta.app_config.name,
                         player_pk=player.pk,
+                        subsession_pk=player.subsession.pk,
+                        session_pk=player.session.pk,
                         url=reverse(View.url_name(),
                                     args=[participant.code, page_index]))
                 )
