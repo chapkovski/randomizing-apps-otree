@@ -29,4 +29,4 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    sequence_of_apps = models.TextField()
+    sequence_of_apps = models.LongStringField()
