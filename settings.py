@@ -12,7 +12,7 @@ SESSION_CONFIG_DEFAULTS = {
 }
 SESSION_CONFIGS = [
 
-    {'name': 'shufller',
+    {'name': 'shuffler',
      'display_name': "Shuffling apps",
      'num_demo_participants': 1,
      'app_sequence': ['StartApp',
