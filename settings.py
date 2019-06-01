@@ -14,7 +14,7 @@ SESSION_CONFIGS = [
 
     {'name': 'shuffler',
      'display_name': "Shuffling apps",
-     'num_demo_participants': 1,
+     'num_demo_participants': 2,
      'app_sequence': ['StartApp',
                       'App1',
                       'App2',

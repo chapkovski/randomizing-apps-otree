@@ -8,7 +8,7 @@ import json
 from otree.models_concrete import ParticipantToPlayerLookup, RoomToSession
 
 # from otree.models.session import Session as BaseSession
-author = 'Philipp Chapkovski, University of Zurich'
+author = 'Philipp Chapkovski, HSE-Moscow'
 
 doc = """
 Randomizing app sequence
@@ -76,20 +76,22 @@ def build_participant_to_player_lookups(participant, subsession_app_names, sessi
 
 class Constants(BaseConstants):
     name_in_url = 'intro'
-    players_per_group = None
+    players_per_group = 2
     num_rounds = 1
 
 
 class Subsession(BaseSubsession):
     def creating_session(self):
-        for p in self.get_players():
-            print('OLD APP SEQ', self.session.config['app_sequence'])
-            if not p.sequence_of_apps:
-                ParticipantToPlayerLookup.objects.filter(participant=p.participant).delete()
-                p.sequence_of_apps = json.dumps(get_new_sequence_of_apps(self.session.config['app_sequence']))
-                print(f'SETTING A NEW RANDOM SEQUENCE...:::{p.sequence_of_apps}')
-                build_participant_to_player_lookups(p.participant, json.loads(p.sequence_of_apps),
-                                                    self.session)
+        for g in self.get_groups():
+            new_app_seq=get_new_sequence_of_apps(self.session.config['app_sequence'])
+            for p in g.get_players():
+                print('OLD APP SEQ', self.session.config['app_sequence'])
+                if not p.sequence_of_apps:
+                    ParticipantToPlayerLookup.objects.filter(participant=p.participant).delete()
+                    p.sequence_of_apps = json.dumps(new_app_seq)
+                    print(f'SETTING A NEW RANDOM SEQUENCE...:::{p.sequence_of_apps}')
+                    build_participant_to_player_lookups(p.participant, json.loads(p.sequence_of_apps),
+                                                        self.session)
 
 
 class Group(BaseGroup):
