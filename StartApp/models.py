@@ -15,9 +15,8 @@ Randomizing app sequence
 """
 
 from otree.models_concrete import ParticipantToPlayerLookup
-from otree.common_internal import (
-    get_models_module)
-from otree import common_internal
+from otree.common import (get_models_module)
+from otree import common
 
 
 def get_new_sequence_of_apps(app_sequence):
@@ -33,7 +32,7 @@ def build_participant_to_player_lookups(participant, subsession_app_names, sessi
 
     for app_name in subsession_app_names:
 
-        views_module = common_internal.get_pages_module(app_name)
+        views_module = common.get_pages_module(app_name)
         models_module = get_models_module(app_name)
         Constants = models_module.Constants
         Player = models_module.Player
