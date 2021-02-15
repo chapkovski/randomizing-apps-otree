@@ -24,4 +24,10 @@ from ._builtin import Page, WaitPage
 from StartApp.pages import Page
 ```
 
+
+## Citation:
+if use, please cite:
+> Chapkovski, Philipp, Randomizing apps in oTree (February 15, 2021). Available at SSRN: https://ssrn.com/abstract=3786021
+
 That's it, enjoy!
+
