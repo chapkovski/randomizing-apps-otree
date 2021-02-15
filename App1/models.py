@@ -5,9 +5,8 @@ from otree.api import (
 import random
 import csv
 import json
-from otree.models_concrete import ParticipantToPlayerLookup, RoomToSession
-# from otree.models.session import Session as BaseSession
-author = 'Philipp Chapkovski, University of Zurich'
+
+author = 'Philipp Chapkovski, HSE-Moscow'
 
 doc = """
     app1
@@ -21,8 +20,7 @@ class Constants(BaseConstants):
 
 
 class Subsession(BaseSubsession):
-    def before_session_starts(self):
-        ...
+    pass
 
 
 class Group(BaseGroup):
@@ -30,5 +28,4 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-
     decision = models.IntegerField()

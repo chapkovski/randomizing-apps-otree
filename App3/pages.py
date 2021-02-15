@@ -1,18 +1,17 @@
 from . import models
-from ._builtin import Page, WaitPage
+from ._builtin import  WaitPage
+from StartApp.pages import Page
 from otree.api import Currency as c, currency_range
 from .models import Constants
 import json
 import random
 from random import sample, choice
 
-from otree.models_concrete import ParticipantToPlayerLookup, RoomToSession
-
 
 # You can add as many pages as needed in the beginning and in the end
 # of shuffled sequence
 class App3Page1(Page):
-    ...
+    pass
 
 
 page_sequence = [
