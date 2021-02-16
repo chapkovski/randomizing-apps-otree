@@ -36,9 +36,9 @@ class Constants(BaseConstants):
 class Subsession(BaseSubsession):
     def creating_session(self):
         app_seq = self.session.config.get('app_sequence')
-        first_app, *tail = app_seq
-        random.shuffle(tail)
         for p in self.get_players():
+            first_app, *tail = app_seq
+            random.shuffle(tail)
             new_app_seq = [first_app] + tail
             p.sequence_of_apps = json.dumps(new_app_seq)
             p.participant.vars['_updated_seq_apps'] = seq_to_dict(new_app_seq)
